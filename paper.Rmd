@@ -20,11 +20,55 @@ can enjoy truly data-driven results.
 
 # INTRODUCTION
 
+The researcher's task is to uncover new things; challenge conventional wisdom;
+explore uncharted territory; and confirm or dismiss bias with facts. In order to
+accomplish such feats, it is important that a researcher's results be
+_reproducible,_ that is:
+
+> Results are reproducible if they can be reliably replicated or recomputed in
+another time or place.
+
+For a researcher that is trying to have an impact that extends beyond the "here and now,"
+reproducible results ensure that conclusions are valid in another time and place. Further,
+for industries like the Pharmaceutical Industry, reproducibility can be a mandate and 
+legal requirement for valid results. As a result, tools like R Markdown that help ensure
+reproducible results are valuable tools in a researcher's toolkit.
+
 # GETTING STARTED
 
 ## WHAT IS MARKDOWN?
 
+The story of R Markdown begins with Markdown, a markup language and formatting
+syntax designed to be:
+
+ - human readable
+ - flexible in its output
+
+For example, where HTML would allow writing bold and italicized text like:
+
+```
+This is <b>bold</b> and <i>italicized</i> text
+```
+
+Markdown allows bold and italicized text with:
+
+```
+This is **bold** and _italicizied_ text
+```
+
+A subtle difference, but Markdown is more readable because there are not any
+letters injected, and it is _much faster_ to type. It also has more simplicity
+in its objectives and flexibility in its output, so where HTML is rendered
+almost exclusively in browsers, Markdown can be relevant for the web, print, and
+even computer terminals.
+
 ## WHAT IS R MARKDOWN?
+
+If Markdown is a lightweight markup language and text formatting syntax, R Markdown
+must be Markdown + R code, right? Yes, with a catch. R Markdown actually supports
+_many_ programming languages and output types. It got its start with R, and R is
+the primary language engine, but R is an interface language. This means that R
+is commonly used to "wrap" or 
 
 ## WHAT IS AN R NOTEBOOK?
 
@@ -39,3 +83,15 @@ can enjoy truly data-driven results.
 # OTHER TOOLS
 
 # CONCLUSION
+
+### Resources
+
+- https://rpubs.com/marschmi/105639
+- http://ropensci.github.io/reproducibility-guide/sections/tools/
+- http://shop.oreilly.com/product/0636920051435.do
+- https://rviews.rstudio.com/2017/03/15/why-i-love-r-notebooks/
+- https://rviews.rstudio.com/2018/11/01/r-markdown-a-better-approach/
+- https://rviews.rstudio.com/2017/01/25/r-markdown-for-the-enterprise/
+- https://rviews.rstudio.com/2018/01/18/package-management-for-reproducible-r-code/
+- https://en.wikipedia.org/wiki/Markdown
+- https://www.oreilly.com/library/view/the-art-of/9781593273842/ch15.html
