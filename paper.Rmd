@@ -152,6 +152,8 @@ options](./img/new-file-dropdown.png)
 - Code chunk options
 - Knit options
 - URLs and internal links
+- Table of Contents
+- Table Output
 - RStudio documentation, etc
 
 # CONCLUSION
