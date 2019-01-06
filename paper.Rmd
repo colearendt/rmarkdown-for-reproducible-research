@@ -64,17 +64,76 @@ even computer terminals.
 
 ## WHAT IS R MARKDOWN?
 
-If Markdown is a lightweight markup language and text formatting syntax, R Markdown
-must be Markdown + R code, right? Yes, with a catch. R Markdown actually supports
-_many_ programming languages and output types. It got its start with R, and R is
-the primary language engine, but R is an interface language. This means that R
-is commonly used to "wrap" or 
+If Markdown is a lightweight markup language and text formatting syntax, R
+Markdown must be Markdown + R code, right? Yes, with a catch. R Markdown
+actually supports _many_ programming languages and output types. It got its
+start with R, and R is the primary language engine, but R is an interface
+language. This means that R has been (from its outset) commonly used to "wrap"
+or call other programming languages. This began as Fortran and C, but has
+expanded to include C++, Python, JavaScript, SQL, Stan, and more. As a result, R
+Markdown supports the inclusion of many of these programming languages.
+
+## THE YAML HEADER
+
+We will focus on R code for now, and come back to the other languages later. R
+Markdown has a handful of noteworthy differences from general Markdown. First,
+every R Markdown document begins with a YAML header:
+
+```
+---
+title: "R Markdown for Reproducible Research"
+output: pdf_document
+---
+```
+
+The YAML header uses YAML syntax to declare all sorts of information about the
+document. The full documentation on what options are available is [here](todo),
+but the primary elements are the document's Title and Output type. The output type
+has many options, and can actually support multiple options at the same time.
+
+Some choices for Output Type:
+
+- Static HTML page
+- HTML website
+- PDF document
+- Microsoft Word document
+- HTML Presentation
+- PDF Presentation
+- Microsoft PowerPoint Presentation
+- Shiny (interactive) web application
+- Blog, Book, etc.
+
+## THE REST OF THE DOCUMENT
+
+Once the YAML header is defined, the body of the document contains:
+
+- Markdown text
+- inline code
+- code chunks
+- embedded items (images, etc.)
+
+Inline code is written like ` r my_function ` and gets placed into the document
+like text. It can be very useful for displaying data-determined values
+programmatically so that they are dynamically changed when the document is
+regenerated (for instance, if new data is acquired).
+
+Code chunks are much like inline code, but they stand alone and are more useful for
+lengthier code blocks that do complex logic, setup, value preparation, plotting, or
+other output generation.
+
+Embedded images and other resources are included into R Markdown much like they
+would be in an HTML page. The syntax looks like `![Text alias](path/to/resource)`.
+
+Once the document is written, it is passed through the `knitr` package to "knit"
+the R Markdown document into its final output(s). This creates a new
+/ fresh R context to render the document and thereby helps ensure
+reproducibility.
 
 ## WHAT IS AN R NOTEBOOK?
 
-## WHAT ABOUT OTHER LANGUAGES?
 
-## OUTPUT TYPES
+
+## WHAT ABOUT THE OTHER LANGUAGES?
 
 ## PARAMETERIZED R MARKDOWN
 
@@ -95,3 +154,8 @@ is commonly used to "wrap" or
 - https://rviews.rstudio.com/2018/01/18/package-management-for-reproducible-r-code/
 - https://en.wikipedia.org/wiki/Markdown
 - https://www.oreilly.com/library/view/the-art-of/9781593273842/ch15.html
+
+### TODO
+- Link for YAML syntax
+- Link for YAML header docs
+- Resource on R as an interface language
