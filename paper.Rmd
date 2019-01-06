@@ -119,7 +119,8 @@ regenerated (for instance, if new data is acquired).
 
 Code chunks are much like inline code, but they stand alone and are more useful for
 lengthier code blocks that do complex logic, setup, value preparation, plotting, or
-other output generation.
+other output generation. It is worth noting that code chunks are [very flexible](todo)
+in their options and defaults, and the number of options can sometimes be overwhelming.
 
 Embedded images and other resources are included into R Markdown much like they
 would be in an HTML page. The syntax looks like `![Text alias](path/to/resource)`.
@@ -131,7 +132,12 @@ reproducibility.
 
 ## WHAT IS AN R NOTEBOOK?
 
+When creating a new document in the RStudio IDE, you might notice an option
+to create a "R Notebook" or "R Markdown Notebook." This is offered in addition
+to the long-known "R Markdown," and the differences are subtle.
 
+![RStudio IDE New File Dropdown showing R Markdown and R Notebook
+options](./img/new-file-dropdown.png)
 
 ## WHAT ABOUT THE OTHER LANGUAGES?
 
@@ -140,6 +146,13 @@ reproducibility.
 # A RESEARCHER'S WORKFLOW
 
 # OTHER TOOLS
+
+# TIPS AND TRICKS
+
+- Code chunk options
+- Knit options
+- URLs and internal links
+- RStudio documentation, etc
 
 # CONCLUSION
 
