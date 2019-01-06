@@ -172,3 +172,5 @@ options](./img/new-file-dropdown.png)
 - Link for YAML syntax
 - Link for YAML header docs
 - Resource on R as an interface language
+- link to figures / images
+- start managing references better...
