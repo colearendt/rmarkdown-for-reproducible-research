@@ -67,7 +67,7 @@ even computer terminals.
 ## WHAT IS R MARKDOWN?
 
 If Markdown is a lightweight markup language and text formatting syntax, R
-Markdown must be Markdown + R code, right? Yes, with a catch. R Markdown
+Markdown must be Markdown plus R code, right? Yes, with a catch. R Markdown
 actually supports _many_ programming languages and output types. It got its
 start with R, and R is the primary language engine, but R is an interface
 language. This means that R has been (from its outset) commonly used to "wrap"
