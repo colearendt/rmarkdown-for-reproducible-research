@@ -1,5 +1,7 @@
 ---
 title: "R Markdown for Reproducible Research"
+author: "Cole Arendt"
+date: "`r Sys.Date()`"
 output: pdf_document
 ---
 
@@ -140,12 +142,13 @@ to the long-known "R Markdown," and the differences are subtle.
 ![RStudio IDE New File Dropdown showing R Markdown and R Notebook
 options](./img/new-file-dropdown.png)
 
-There can be [many reasons](todo) that a user might prefer R Notebooks, but the
-most noteworthy difference between R Notebooks and plain R Markdown is that R
-Notebooks are somewhat _stateful_. This means that they cache and display output
-as it is generated, making it easier to interactively and iteratively build a
-narrative without having to re-render the document each time you have made a
-change.
+There can be [many
+reasons](https://rviews.rstudio.com/2017/03/15/why-i-love-r-notebooks/) that a
+user might prefer R Notebooks, but the most noteworthy difference between R
+Notebooks and plain R Markdown is that R Notebooks are somewhat _stateful_. This
+means that they cache and display output as it is generated, making it easier to
+interactively and iteratively build a narrative without having to re-render the
+document each time you have made a change.
 
 It is worth noting that this output can be **problematic for reproducibility**,
 though, since you may have unknowingly persisted an output (state) that is no
@@ -206,10 +209,14 @@ rmarkdown::render(
 )
 ```
 
-There is [much more](todo) available to explore in Parameterized R Markdown,
-like an easy-to-use [user interface](todo) for selecting values. You can also
-host Parameterized R Markdown in a publishing platform like RStudio Connect that
-exposes a user interface to end users of a report.
+There is [much
+more](https://bookdown.org/yihui/rmarkdown/parameterized-reports.html) available
+to explore in Parameterized R Markdown, like an easy-to-use [user
+interface](https://bookdown.org/yihui/rmarkdown/params-knit.html#the-interactive-user-interface)
+for selecting values. You can also host Parameterized R Markdown in a publishing
+platform like RStudio Connect that [exposes a user interface to end
+users](https://docs.rstudio.com/connect/user/param-rmarkdown.html#publish-param-rmarkdown)
+of a report.
 
 # A RESEARCHER'S WORKFLOW
 
@@ -226,16 +233,16 @@ or other output which she will use to share the output with colleagues or
 other researchers.
 
 This process is tedious and error prone: 
- - moving the results to another medium (from script output to a PowerPoint)
+ - moving the results to another medium (e.g. from script output to a PowerPoint)
  - copying values, data, plots, images, etc.
- - injecting values into prose (i.e. There are 45 rows in this dataset)
+ - injecting values into prose (e.g. There are 45 rows in this dataset)
  
 Moreover, let us imagine that someone wants to reproduce her work, or that
 another set of surveys, experiments, or clinical trials are added to her
 dataset. Not only must she re-execute her code, she must also duplicate all of
 the transmission of information into her manual "publishing" process. If any
 data or information is accidentally "left in place" from her first pass, her
-results will be un-reproducible and incorrect.
+published results will be un-reproducible and incorrect.
 
 ## AN ELEGANT SOLUTION
 
@@ -253,11 +260,12 @@ data, since no human "copy/paste" or other editorial process has taken place.
 
 This problem and solution can be reduced to a paradigm of _best practices_ in
 which reproducible, data-driven research is greatly simplified by R Markdown.
-There are many [much more thorough](todo) articles on the topic, but we will
-hit the highlights.
+There are many [much more thorough](https://rpubs.com/marschmi/105639) articles
+on the topic, but we will focus on the highlights.
 
 - Define input datasets, resources, or other dependencies
-- Manage R packages in a [reproducible fashion](todo)
+- Manage R packages in a [reproducible
+fashion](https://rviews.rstudio.com/2018/01/18/package-management-for-reproducible-r-code/)
 - Write narrative and code together into an R Markdown document
 - Ensure that the narrative is programmatically dependent on the data
 - Configure settings so that the R Markdown document produces final output
@@ -284,15 +292,15 @@ hit the highlights.
 
 # CONCLUSION
 
+
+
 ### Resources
 
 - https://rpubs.com/marschmi/105639
 - http://ropensci.github.io/reproducibility-guide/sections/tools/
 - http://shop.oreilly.com/product/0636920051435.do
-- https://rviews.rstudio.com/2017/03/15/why-i-love-r-notebooks/
 - https://rviews.rstudio.com/2018/11/01/r-markdown-a-better-approach/
 - https://rviews.rstudio.com/2017/01/25/r-markdown-for-the-enterprise/
-- https://rviews.rstudio.com/2018/01/18/package-management-for-reproducible-r-code/
 - https://en.wikipedia.org/wiki/Markdown
 - https://www.oreilly.com/library/view/the-art-of/9781593273842/ch15.html
 
