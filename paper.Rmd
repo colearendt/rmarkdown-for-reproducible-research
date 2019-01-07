@@ -75,8 +75,7 @@ Markdown supports the inclusion of many of these programming languages.
 
 ## THE YAML HEADER
 
-We will focus on R code for now, and come back to the other languages later. R
-Markdown has a handful of noteworthy differences from general Markdown. First,
+R Markdown has a handful of noteworthy differences from general Markdown. First,
 every R Markdown document begins with a YAML header:
 
 ```yaml
@@ -88,8 +87,9 @@ output: pdf_document
 
 The YAML header uses YAML syntax to declare all sorts of information about the
 document. The full documentation on what options are available is [here](todo),
-but the primary elements are the document's Title and Output type. The output type
-has many options, and can actually support multiple options at the same time.
+but the primary elements are the document's Title and Output type. The output
+type has many options, and can actually support multiple options at the same
+time.
 
 Some choices for Output Type:
 
@@ -117,18 +117,19 @@ like text. It can be very useful for displaying data-determined values
 programmatically so that they are dynamically changed when the document is
 regenerated (for instance, if new data is acquired).
 
-Code chunks are much like inline code, but they stand alone and are more useful for
-lengthier code blocks that do complex logic, setup, value preparation, plotting, or
-other output generation. It is worth noting that code chunks are [very flexible](todo)
-in their options and defaults, and the number of options can sometimes be overwhelming.
+Code chunks are much like inline code, but they stand alone and are more useful
+for lengthier code blocks that do complex logic, setup, value preparation,
+plotting, or other output generation. It is worth noting that code chunks are
+[very flexible](todo) in their options and defaults, and the number of options
+can sometimes be overwhelming.
 
 Embedded images and other resources are included into R Markdown much like they
-would be in an HTML page. The syntax looks like `![Text alias](path/to/resource)`.
+would be in an HTML page. The syntax looks like `![Text
+alias](path/to/resource)`.
 
 Once the document is written, it is passed through the `knitr` package to "knit"
-the R Markdown document into its final output(s). This creates a new
-/ fresh R context to render the document and thereby helps ensure
-reproducibility.
+the R Markdown document into its final output(s). This creates a new / fresh R
+context to render the document and thereby helps ensure reproducibility.
 
 ## WHAT IS AN R NOTEBOOK?
 
@@ -139,9 +140,10 @@ to the long-known "R Markdown," and the differences are subtle.
 ![RStudio IDE New File Dropdown showing R Markdown and R Notebook
 options](./img/new-file-dropdown.png)
 
-The most noteworthy difference about R Notebooks versus plain R Markdown is that
-they are somewhat _stateful_. This means that they cache and display output as
-it is generated, making it easier to interactively and iteratively build a
+There can be [many reasons](todo) that a user might prefer R Notebooks, but the
+most noteworthy difference between R Notebooks and plain R Markdown is that R
+Notebooks are somewhat _stateful_. This means that they cache and display output
+as it is generated, making it easier to interactively and iteratively build a
 narrative without having to re-render the document each time you have made a
 change.
 
@@ -150,9 +152,9 @@ though, since you may have unknowingly persisted an output (state) that is no
 longer relevant or reproducible.
 
 As a result, R Notebooks can be thought about as good for interactive
-exploration or discussion among developers, but moving to an R Markdown format
-is generally preferred once the report has stabilized or is being shared with an
-end user.
+exploration or discussion among developers, but moving to a standard R Markdown
+format is generally preferred once the report has stabilized or is being shared
+with an end user.
 
 R Notebooks are identified by `output_type: html_notebook`. Remember that you can have
 multiple output types, so a YAML header like the following allows you to easily
@@ -169,9 +171,11 @@ output:
 ---
 ```
 
-## WHAT ABOUT THE OTHER LANGUAGES?
-
 ## PARAMETERIZED R MARKDOWN
+
+A little known feature of R Markdown is the ability to add _parameters_.
+Parameterized R Markdown is defined by adding parameters to the YAML header,
+which will then be utilized within the rendering of the document.
 
 # A RESEARCHER'S WORKFLOW
 
