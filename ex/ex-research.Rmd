@@ -1,0 +1,52 @@
+---
+title: "Iris Research"
+author: "Cole Arendt"
+date: "1/6/2019"
+output: pdf_document
+---
+
+```{r setup, include=FALSE, message=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+input_data <- readRDS("iris_altered.rds")
+
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+```
+
+## Iris Data
+
+This dataset is quite an interesting one. It has `r ncol(input_data)` columns
+and `r nrow(input_data)` rows. We can look at a plot of the data to get a better
+understanding of it:
+
+```{r plot}
+ggplot(input_data, aes(Sepal.Length, Sepal.Width)) +
+  geom_point() +
+  facet_grid(~Species)
+```
+
+Further, we can dig into the various groups of the data to see more detail:
+
+```{r explore_no_output, include=FALSE}
+mean_detail <- input_data %>%
+  group_by(Species) %>%
+  summarize_all(mean) %>%
+  rename_at(vars(-Species), function(x){paste0("mean_",x)})
+median_detail <- input_data %>%
+  group_by(Species) %>%
+  summarize_all(median) %>%
+  rename_at(vars(-Species), function(x){paste0("median_",x)})
+
+all_detail <- mean_detail %>%
+  left_join(median_detail, by = c("Species"))
+
+all_detail_tall <- all_detail %>%
+  gather(key = "metric", value = "value", -Species) %>%
+  spread(key = "Species", value = "value")
+```
+
+```{r explore_output}
+knitr::kable(all_detail_tall)
+```
