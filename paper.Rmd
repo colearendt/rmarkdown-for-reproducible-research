@@ -174,8 +174,42 @@ output:
 ## PARAMETERIZED R MARKDOWN
 
 A little known feature of R Markdown is the ability to add _parameters_.
-Parameterized R Markdown is defined by adding parameters to the YAML header,
-which will then be utilized within the rendering of the document.
+Parameterized R Markdown is defined by the addition of parameters to the YAML
+header, which will then be utilized within the rendering of the document.
+
+For instance, a YAML header like the following might be used to define the
+report dates:
+
+```yaml
+---
+title: "R Markdown - Parameterized"
+output: html_document
+params:
+  start_date: !r Sys.Date() - 10
+  end_date: !r Sys.Date()
+---
+```
+
+This allows these values to be accessible in code using `params$start_date` and
+`params$end_date`. It essentially makes the R Markdown document a _parameterized
+executable_ or function, which can then be called using `rmarkdown::render()`.
+For example, the following executes this R Markdown report with non-default
+parameter selections:
+
+```r
+rmarkdown::render(
+  "./ex/ex-parameterized.Rmd", 
+  params = list(
+    start_date = Sys.Date()-5, 
+    end_date = Sys.Date()
+  )
+)
+```
+
+There is [much more](todo) available to explore in Parameterized R Markdown,
+like an easy-to-use [user interface](todo) for selecting values. You can also
+host Parameterized R Markdown in a publishing platform like RStudio Connect that
+exposes a user interface to end users of a report.
 
 # A RESEARCHER'S WORKFLOW
 
