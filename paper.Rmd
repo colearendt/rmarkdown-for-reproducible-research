@@ -226,9 +226,9 @@ or other output which she will use to share the output with colleagues or
 other researchers.
 
 This process is tedious and error prone: 
- - moving the results to another medium
+ - moving the results to another medium (from script output to a PowerPoint)
  - copying values, data, plots, images, etc.
- - injecting values into prose
+ - injecting values into prose (i.e. There are 45 rows in this dataset)
  
 Moreover, let us imagine that someone wants to reproduce her work, or that
 another set of surveys, experiments, or clinical trials are added to her
@@ -251,7 +251,19 @@ data, since no human "copy/paste" or other editorial process has taken place.
 
 ## WORKFLOW FOR DATA DRIVEN RESEARCH
 
-# OTHER TOOLS
+This problem and solution can be reduced to a paradigm of _best practices_ in
+which reproducible, data-driven research is greatly simplified by R Markdown.
+There are many [much more thorough](todo) articles on the topic, but we will
+hit the highlights.
+
+- Define input datasets, resources, or other dependencies
+- Manage R packages in a [reproducible fashion](todo)
+- Write narrative and code together into an R Markdown document
+- Ensure that the narrative is programmatically dependent on the data
+- Configure settings so that the R Markdown document produces final output
+
+## AN EXAMPLE
+
 
 # TIPS AND TRICKS
 
@@ -261,6 +273,12 @@ data, since no human "copy/paste" or other editorial process has taken place.
 - Table of Contents
 - Table Output
 - RStudio documentation, etc
+
+# OTHER TOOLS
+
+## INCLUDING PYTHON
+
+## CUSTOMIZED EMAILS
 
 # CONCLUSION
 
