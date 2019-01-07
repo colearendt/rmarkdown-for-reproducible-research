@@ -216,6 +216,41 @@ exposes a user interface to end users of a report.
 Now that we have thoroughly explored the what of R Markdown, let us
 now delve into _why_ this tool is useful for researchers.
 
+## A COMMON PROBLEM
+
+Let us imagine a researcher who has done a fair amount of data analysis,
+exploration, and deduction to come to a set of results, and that programming
+was involved in this researcher's endeavor. When the researcher has finished,
+she will likely take the results and use them to build a paper, report, presentation,
+or other output which she will use to share the output with colleagues or 
+other researchers.
+
+This process is tedious and error prone: 
+ - moving the results to another medium
+ - copying values, data, plots, images, etc.
+ - injecting values into prose
+ 
+Moreover, let us imagine that someone wants to reproduce her work, or that
+another set of surveys, experiments, or clinical trials are added to her
+dataset. Not only must she re-execute her code, she must also duplicate all of
+the transmission of information into her manual "publishing" process. If any
+data or information is accidentally "left in place" from her first pass, her
+results will be un-reproducible and incorrect.
+
+## AN ELEGANT SOLUTION
+
+Let us now imagine the same researcher begins her programming process by writing
+her prose and code in a single R Markdown document. In-line values in the
+document, plots, images, and other output is all generated dynamically based
+only on the input data and runtime ecosystem (packages, etc.). 
+
+As a result, when another researcher wants to reproduce her results or when she
+wants to re-execute the paper on new data, the workload becomes "Click Knit."
+Further, our researcher can trust that the report accurately reflects the input
+data, since no human "copy/paste" or other editorial process has taken place.
+
+## WORKFLOW FOR DATA DRIVEN RESEARCH
+
 # OTHER TOOLS
 
 # TIPS AND TRICKS
