@@ -280,6 +280,8 @@ hit the highlights.
 
 ## CUSTOMIZED EMAILS
 
+## VERSION CONTROL AND GIT
+
 # CONCLUSION
 
 ### Resources
