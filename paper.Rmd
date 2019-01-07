@@ -79,7 +79,7 @@ We will focus on R code for now, and come back to the other languages later. R
 Markdown has a handful of noteworthy differences from general Markdown. First,
 every R Markdown document begins with a YAML header:
 
-```
+```yaml
 ---
 title: "R Markdown for Reproducible Research"
 output: pdf_document
@@ -139,11 +139,44 @@ to the long-known "R Markdown," and the differences are subtle.
 ![RStudio IDE New File Dropdown showing R Markdown and R Notebook
 options](./img/new-file-dropdown.png)
 
+The most noteworthy difference about R Notebooks versus plain R Markdown is that
+they are somewhat _stateful_. This means that they cache and display output as
+it is generated, making it easier to interactively and iteratively build a
+narrative without having to re-render the document each time you have made a
+change.
+
+It is worth noting that this output can be **problematic for reproducibility**,
+though, since you may have unknowingly persisted an output (state) that is no
+longer relevant or reproducible.
+
+As a result, R Notebooks can be thought about as good for interactive
+exploration or discussion among developers, but moving to an R Markdown format
+is generally preferred once the report has stabilized or is being shared with an
+end user.
+
+R Notebooks are identified by `output_type: html_notebook`. Remember that you can have
+multiple output types, so a YAML header like the following allows you to easily
+build multiple output types from the same document.
+
+```yaml
+---
+title: "R Notebook"
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
+  html_notebook: default
+---
+```
+
 ## WHAT ABOUT THE OTHER LANGUAGES?
 
 ## PARAMETERIZED R MARKDOWN
 
 # A RESEARCHER'S WORKFLOW
+
+Now that we have thoroughly explored the what of R Markdown, let us
+now delve into _why_ this tool is useful for researchers.
 
 # OTHER TOOLS
 
