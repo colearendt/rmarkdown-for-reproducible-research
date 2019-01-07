@@ -8,7 +8,7 @@ output: pdf_document
 ```{r setup, include=FALSE, message=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 
-input_data <- readRDS("iris_altered.rds")
+input_data <- readRDS("iris.rds")
 
 library(dplyr)
 library(tidyr)
