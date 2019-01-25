@@ -62,7 +62,9 @@ A subtle difference, but Markdown is more readable because there are not any
 letters injected, and it is _much faster_ to type. It also has more simplicity
 in its objectives and flexibility in its output, so where HTML is rendered
 almost exclusively in browsers, Markdown can be relevant for the web, print, and
-even computer terminals (todo image).
+even computer terminals (see Figure \@ref(terminal-markdown)).
+
+![Markdown with syntax highlighting in a computer terminal](./img/terminal-markdown.png){#terminal-markdown}
 
 ## WHAT IS R MARKDOWN?
 
@@ -88,10 +90,11 @@ output: pdf_document
 ```
 
 The YAML header uses YAML syntax to declare all sorts of information about the
-document. The full documentation on what options are available is [here](todo),
-but the primary elements are the document's Title and Output type. The output
-type has many options, and can actually support multiple options at the same
-time.
+document. The full documentation on what options are available is
+[here](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)
+or [here](https://bookdown.org/yihui/rmarkdown/), but the primary elements are
+the document's Title and Output type. The output type has many options, and can
+actually support multiple options at the same time.
 
 Some choices for Output Type:
 
@@ -122,8 +125,10 @@ regenerated (for instance, if new data is acquired).
 Code chunks are much like inline code, but they stand alone and are more useful
 for lengthier code blocks that do complex logic, setup, value preparation,
 plotting, or other output generation. It is worth noting that code chunks are
-[very flexible](todo) in their options and defaults, and the number of options
-can sometimes be overwhelming.
+[very
+flexible](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)
+in their options and defaults, and the number of options can sometimes be
+overwhelming.
 
 Embedded images and other resources are included into R Markdown much like they
 would be in an HTML page. The syntax looks like `![Text
@@ -274,10 +279,12 @@ fashion](https://rviews.rstudio.com/2018/01/18/package-management-for-reproducib
 ## AN EXAMPLE
 
 Let us imagine that we are beginning a project where we explore the classic
-[`iris` dataset](todo). We might approach the problem by first specifying the
-`iris` dataset as our only input. To ensure auditability and reproducibility, I
-might save and [open source the dataset](todo) as well as specify it as a parameter
-for my research in the YAML header.
+[`iris`
+dataset](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/iris.html).
+We might approach the problem by first specifying the `iris` dataset as our only
+input. To ensure auditability and reproducibility, I might save and [open source
+the dataset](http://opendatahandbook.org/guide/en/why-open-data/) as well as
+specify it as a parameter for my research in the YAML header.
 
 ```
 ---
@@ -322,7 +329,9 @@ the header above the code chunk:
 {r my_chunk_name, my_option="one", my_other_option="two"}
 ```
 
-While there are [_many_ such options](todo), some of the most ubiquitous are:
+While there are [_many_ such
+options](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf),
+some of the most ubiquitous are:
 
 - `echo` - whether to "echo" the executed code in the output document
 - `include` - whether to include output of the chunk in the output document
@@ -374,16 +383,29 @@ the following is recommended for internal links:
 - Label a header with something like `# MY HEADER {#the-header}`
 - Reference the header using `\@ref(the-header)`
 
-(todo reference figures, reference bibliography items)
+Referencing images can be done in a similar fashion. It unfortunately requires
+using a different output format for PDFs (`bookdown::pdf_document2`), but
+can be done using:
+
+- Label the image with `![Image alt text](./image/path){#the-label}`
+- Reference the image using `Figure \@ref(the-label)`
+- Images [built in a code
+chunk](https://bookdown.org/yihui/bookdown/figures.html) can also be referenced
+with `\@ref(fig:code-chunk-name)`
 
 ## RSTUDIO DOCUMENTATION
 
 RStudio has adopted R Markdown as the standard for some of its most important
 communication. If you are interested in examples, we
 
-- host our [company blog](todo) and [community blog](todo) using [blogdown](todo)
-- write (most) [product documentation](https://docs.rstudio.com/) using [bookdown](todo)
-- build [many](todo) [popular](todo) [websites](todo) using [pkgdown](todo)
+- host our [company blog](https://blog.rstudio.com/) and [community
+blog](https://rviews.rstudio.com/) using
+[blogdown](https://bookdown.org/yihui/blogdown/)
+- write (most) [product documentation](https://docs.rstudio.com/) using
+[bookdown](https://bookdown.org/yihui/bookdown/)
+- build [many](https://ggplot2.tidyverse.org/)
+[popular](https://db.rstudio.com/) [websites](http://shiny.rstudio.com/) using
+[pkgdown](https://pkgdown.r-lib.org/)
 - write presentations and papers like this one using R Markdown
 
 We like to think that the sky is the limit when it comes to the reproducible
@@ -402,28 +424,39 @@ R Markdown, despite its name, is actually remarkably language agnostic. You
 can include code chunks in other languages (like Python, bash, Stan, and SQL) in
 your R Markdown documents.
 
-Python, in particular, has recently improved support in R Markdown and the RStudio IDE.
-Specifically, the [`reticulate`](todo) package makes it possible to specify the python
-version and conda / virtual environment, as well as persist objects across code chunks. 
-There is also native support for including python plots and other output in your
-rendered R Markdown document. There is much written already about this work flow. If
-interested, the following articles are helpful:
+Python, in particular, has recently improved support in R Markdown and the
+RStudio IDE. Specifically, the
+[`reticulate`](https://rstudio.github.io/reticulate/) package makes it possible
+to specify the python version and conda / virtual environment, as well as
+persist objects across code chunks.
 
-- todo
-- todo
+There is also native support for including python plots and other output in your
+rendered R Markdown document. There is much written already about this work
+flow. If interested, the following articles are helpful:
+
+- [RStudio IDE
+features](https://blog.rstudio.com/2018/10/09/rstudio-1-2-preview-reticulated-python/)
+- [Calling Python from
+R](https://rstudio.github.io/reticulate/articles/calling_python.html)
+- [An example Shiny
+application](https://rviews.rstudio.com/2018/04/17/reticulated-shiny/)
 
 ## CUSTOMIZED EMAILS
 
 While emails may not be very relevant to the _researcher's_ task, per se, they
 are a common means of communication for many supportive functions. R Markdown
-reports have what is called [_output metadata_](todo) that can be consumed by
-external services. This, combined with packages like [`blastula`](todo) that
-enable customized email bodies, can facilitate programmatically generating
-reports, documents, or presentations that are programmatically delivered in a
-customizable and personalizable fashion to the consumers of such content.
+reports have what is called [_output
+metadata_](https://docs.rstudio.com/connect/1.7.0/user/r-markdown.html#r-markdown-output-metadata)
+that can be consumed by external services. This, combined with packages like
+[`blastula`](https://github.com/rich-iannone/blastula) that enable customized
+email bodies, can facilitate programmatically generating reports, documents, or
+presentations that are programmatically delivered in a customizable and
+personalizable fashion to the consumers of such content.
 
 RStudio Connect is an example of a platform designed to leverage this tooling
-for this end, and there are [several examples]() to explore if interested.
+for this end, and there are [several
+examples](https://blog.rstudio.com/2018/07/26/rstudio-connect-1-6-6-custom-emails/)
+to explore if interested.
 
 ## VERSION CONTROL AND GIT
 
@@ -442,10 +475,10 @@ moment in time. Further, since R Markdown consists of plaintext documents, we
 acquire easy auditability of code that can be compared over time.
 
 There are several helpful tutorials and books on the topic, principally [Happy
-Git with R](todo), and even a built-in `git` pane within the RStudio IDE to simplify
-some operations (todo).
+Git with R](https://happygitwithr.com/), and even a built-in `git` pane within the RStudio IDE to simplify
+some operations (see Figure \@ref(git-ide)).
 
-![The RStudio IDE `git` pane with new commits and a modified paper](./img/git-ide.png)
+![The RStudio IDE `git` pane with new commits and a modified paper](./img/git-ide.png){#git-ide}
 
 # CONCLUSION
 
@@ -459,17 +492,9 @@ quality and reproducible tools that make such a future possible.
 
 ### Resources
 
-- https://rpubs.com/marschmi/105639
 - http://ropensci.github.io/reproducibility-guide/sections/tools/
 - http://shop.oreilly.com/product/0636920051435.do
 - https://rviews.rstudio.com/2018/11/01/r-markdown-a-better-approach/
 - https://rviews.rstudio.com/2017/01/25/r-markdown-for-the-enterprise/
 - https://en.wikipedia.org/wiki/Markdown
 - https://www.oreilly.com/library/view/the-art-of/9781593273842/ch15.html
-
-### TODO
-- Link for YAML syntax
-- Link for YAML header docs
-- Resource on R as an interface language
-- link to figures / images
-- start managing references better...
