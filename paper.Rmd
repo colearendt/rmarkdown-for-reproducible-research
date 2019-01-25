@@ -22,8 +22,8 @@ can enjoy truly data-driven results.
 
 # INTRODUCTION
 
-The researcher's task is to uncover new things; challenge conventional wisdom;
-explore uncharted territory; and confirm or dismiss bias with facts. In order to
+The researcher's task is to uncover new things, challenge conventional wisdom,
+explore uncharted territory, and confirm or dismiss bias with facts. In order to
 accomplish such feats, it is important that a researcher's results be
 _reproducible,_ that is:
 
@@ -33,8 +33,8 @@ another time or place.
 For a researcher that is trying to have an impact that extends beyond the "here and now,"
 reproducible results ensure that conclusions are valid in another time and place. Further,
 for industries like the Pharmaceutical Industry, reproducibility can be a mandate and 
-legal requirement for valid results. As a result, tools like R Markdown that help ensure
-reproducible results are valuable tools in a researcher's toolkit.
+legal requirement for valid results. As a result, software like R Markdown that helps ensure
+reproducible results is a valuable tool in a researcher's toolkit.
 
 # GETTING STARTED
 
