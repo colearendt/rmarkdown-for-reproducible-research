@@ -3,12 +3,14 @@ title: "Iris Research"
 author: "Cole Arendt"
 date: "1/6/2019"
 output: pdf_document
+params:
+  input_data: "iris.rds"
 ---
 
 ```{r setup, include=FALSE, message=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 
-input_data <- readRDS("iris.rds")
+input_data <- readRDS(params$input_data)
 
 library(dplyr)
 library(tidyr)
