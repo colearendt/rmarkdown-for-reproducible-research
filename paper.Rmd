@@ -373,6 +373,8 @@ the following is recommended for internal links:
 - Label a header with something like `# MY HEADER {#the-header}`
 - Reference the header using `\@ref(the-header)`
 
+(todo reference figures, reference bibliography items)
+
 ## RSTUDIO DOCUMENTATION
 
 RStudio has adopted R Markdown as the standard for some of its most important
