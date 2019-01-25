@@ -419,7 +419,13 @@ some operations (todo).
 
 # CONCLUSION
 
-
+R Markdown is a remarkably powerful tool in the researcher's tool belt. Given a
+community of powerful minds contributing to its future, it will only improve in
+its ability to reliably reproduce researcher's results with minimal effort. I
+imagine a world where reporting standards (like the PhUSE paper formatting) are
+defined in an R Markdown template that any researcher or contributor can easily
+use or extend as needed. It is the power of an open source community building
+quality and reproducible tools that make such a future possible.
 
 ### Resources
 
