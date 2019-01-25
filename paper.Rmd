@@ -314,17 +314,51 @@ packages to reproduce or validate my results. Feel free to give it a shot yourse
 
 ## CODE CHUNK OPTIONS
 
-Every code chunk has _many_ options. These are specified 
+Every code chunk has options that control its behavior. These are specified in
+the header above the code chunk:
+
+````
+```{r my_chunk_name, my_option="one", my_other_option="two"}
+r_code <- do_stuff(to_inputs)
+```
+````
+
+While there are [_many_ such options](todo), some of the most ubiquitous are:
+
+- `echo` - whether to "echo" the executed code in the output document
+- `include` - whether to include output of the chunk in the output document
+- `message` - whether to include messages from the chunk in the output document
+
+Further, it is advisable to remember that the defaults can be set with code like:
+```r
+knitr::opts_chunk$set(echo = FALSE)
+```
 
 ## KNIT OPTIONS
 
+
+
 ## URLS AND INTERNAL LINKS
+
+
 
 ## TABLE OF CONTENTS
 
 ## TABLE OUTPUT
 
 ## RSTUDIO DOCUMENTATION
+
+RStudio has adopted R Markdown as the standard for some of its most important
+communication. If you are interested in examples, we
+
+- host our [company blog](todo) and [community blog](todo) using [blogdown](todo)
+- write (most) [product documentation](https://docs.rstudio.com/) using [bookdown](todo)
+- build [many](todo) [popular](todo) [websites](todo) using [pkgdown](todo)
+- write presentations and papers like this one using R Markdown
+
+We like to think that the sky is the limit when it comes to the reproducible
+results that can be achieved using R Markdown, and are always excited to see
+the very cool things that the open source community builds using this tool.
 
 # OTHER TOOLS
 
@@ -350,7 +384,38 @@ interested, the following articles are helpful:
 
 ## CUSTOMIZED EMAILS
 
+While emails may not be very relevant to the _researcher's_ task, per se, they
+are a common means of communication for many supportive functions. R Markdown
+reports have what is called [_output metadata_](todo) that can be consumed by
+external services. This, combined with packages like [`blastula`](todo) that
+enable customized email bodies, can facilitate programmatically generating
+reports, documents, or presentations that are programmatically delivered in a
+customizable and personalizable fashion to the consumers of such content.
+
+RStudio Connect is an example of a platform designed to leverage this tooling
+for this end, and there are [several examples]() to explore if interested.
+
 ## VERSION CONTROL AND GIT
+
+Being able to reproduce a single version of one's research is fantastic... but
+what if you could reproduce _every_ version of one's research? That is the sort
+of magic that "Version Control" provides.
+
+`git` is the most popular version control tool, followed by `subversion`. These
+tools are oriented around software engineering and tracking / "diffing" changes
+in source documents (mostly code) over time.
+
+Since our research in this workflow is entirely driven by data along the highway
+of code, it makes sense to spend some time getting used to these tools. If we
+make version control a part of our process, we get reproducible research up to a
+moment in time and easy auditability of code differences since R Markdown
+consists of plaintext documents that are easily compared over time.
+
+There are several helpful tutorials and books on the topic, principally [Happy
+Git with R](todo), and even a built-in `git` pane within the RStudio IDE to simplify
+some operations (todo).
+
+![The RStudio IDE `git` pane with new commits and a modified paper](./img/git-ide.png)
 
 # CONCLUSION
 
