@@ -62,7 +62,7 @@ A subtle difference, but Markdown is more readable because there are not any
 letters injected, and it is _much faster_ to type. It also has more simplicity
 in its objectives and flexibility in its output, so where HTML is rendered
 almost exclusively in browsers, Markdown can be relevant for the web, print, and
-even computer terminals.
+even computer terminals (todo image).
 
 ## WHAT IS R MARKDOWN?
 
@@ -135,7 +135,7 @@ context to render the document and thereby helps ensure reproducibility.
 
 ## WHAT IS AN R NOTEBOOK?
 
-When creating a new document in the RStudio IDE, you might notice an option
+When creating a new document in the RStudio IDE (todo link to figure), you might notice an option
 to create a "R Notebook" or "R Markdown Notebook." This is offered in addition
 to the long-known "R Markdown," and the differences are subtle.
 
@@ -342,7 +342,6 @@ common options include:
 - templates, formatting, or other output styles
 - parameters
 - output document type
-- 
 
 ## TABLE OF CONTENTS
 
