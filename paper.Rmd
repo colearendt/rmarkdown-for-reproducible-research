@@ -216,7 +216,7 @@ interface](https://bookdown.org/yihui/rmarkdown/params-knit.html#the-interactive
 for selecting values. You can also host Parameterized R Markdown in a publishing
 platform like RStudio Connect that [exposes a user interface to end
 users](https://docs.rstudio.com/connect/user/param-rmarkdown.html#publish-param-rmarkdown)
-of a report.
+of a report without needing them to install R.
 
 # A RESEARCHER'S WORKFLOW
 
