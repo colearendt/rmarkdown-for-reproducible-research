@@ -317,11 +317,9 @@ packages to reproduce or validate my results. Feel free to give it a shot yourse
 Every code chunk has options that control its behavior. These are specified in
 the header above the code chunk:
 
-````
-```{r my_chunk_name, my_option="one", my_other_option="two"}
-r_code <- do_stuff(to_inputs)
+```r
+{r my_chunk_name, my_option="one", my_other_option="two"}
 ```
-````
 
 While there are [_many_ such options](todo), some of the most ubiquitous are:
 
@@ -336,15 +334,45 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## KNIT OPTIONS
 
+"Knitting" is the process of taking an R Markdown document and generating its
+final output. As a result, options passed to the knit process are "global" (i.e. 
+affect the entire document). Most knit options are defined in the YAML header, and
+common options include:
 
-
-## URLS AND INTERNAL LINKS
-
-
+- templates, formatting, or other output styles
+- parameters
+- output document type
+- 
 
 ## TABLE OF CONTENTS
 
-## TABLE OUTPUT
+If your document is very long, a table of contents is very helpful. Unfortunately,
+a table of contents is not included in the PhUSE style guide, so we excluded it
+from this paper. However, you can easily include a table of contents by adding
+a section like the following to your YAML header.
+
+```yaml
+output:
+  html_document:
+    toc: true
+```
+
+```yaml
+output:
+  pdf_document:
+    toc: true
+```
+
+## URLS AND INTERNAL LINKS
+
+Often within a research article, report, presentation, or other work, we are standing
+on the shoulders of giants. As a result, it is very important that we appropriately reference
+their work. External URLs are standard markdown format `[link text](link url)`, and these can
+be used to reference internal headers as well. However, for pdf and html document compatibility,
+the following is recommended for internal links:
+
+- Label a header with something like `# MY HEADER {#the-header}`
+- Reference the header using `\@ref(the-header)`
 
 ## RSTUDIO DOCUMENTATION
 
