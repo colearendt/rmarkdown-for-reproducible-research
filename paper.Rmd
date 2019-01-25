@@ -272,19 +272,81 @@ fashion](https://rviews.rstudio.com/2018/01/18/package-management-for-reproducib
 
 ## AN EXAMPLE
 
+Let us imagine that we are beginning a project where we explore the classic
+[`iris` dataset](todo). We might approach the problem by first specifying the
+`iris` dataset as our only input. To ensure auditability and reproducibility, I
+might save and [open source the dataset](todo) as well as specify it as a parameter
+for my research in the YAML header.
+
+```
+---
+title: "Iris Research"
+author: "Cole Arendt"
+date: "1/6/2019"
+output: pdf_document
+params:
+  input_data: "iris.rds"
+---
+```
+
+Now, I need R packages to make my work more efficient. I have chosen `dplyr`,
+`tidyr`, and `ggplot2`. Though I reference these packages in my code, I should
+also keep track of which versions of the package I am using. For this task, I
+might use `packrat::.snapshotImpl(".", snapshot.sources = FALSE)`.
+
+Finally, we come to my actual research. As I explore this dataset, I must ensure
+that my results are programmatic. This means plots, values, and prose should
+be dependent only on my input dataset.
+
+When complete, I will be able to generate my research paper with one line of
+code (or one click):
+
+```r
+rmarkdown::render("./ex/ex-research.Rmd")
+```
+
+If I received updated, corrected, or otherwise different data (i.e. "iris_altered.rds"),
+changing my single input parameter and re-rendering the report will reliably rebuild my
+analysis off of different data. Further, any other researcher can take my document and R
+packages to reproduce or validate my results. Feel free to give it a shot yourself!
 
 # TIPS AND TRICKS
 
-- Code chunk options
-- Knit options
-- URLs and internal links
-- Table of Contents
-- Table Output
-- RStudio documentation, etc
+## CODE CHUNK OPTIONS
+
+Every code chunk has _many_ options. These are specified 
+
+## KNIT OPTIONS
+
+## URLS AND INTERNAL LINKS
+
+## TABLE OF CONTENTS
+
+## TABLE OUTPUT
+
+## RSTUDIO DOCUMENTATION
 
 # OTHER TOOLS
 
 ## INCLUDING PYTHON
+
+Python is a general purpose programming language that is increasingly
+common in data science. It has great utility in many regards and many
+useful modules (akin to packages) that can be useful to a researcher.
+
+R Markdown, despite its name, is actually remarkably language agnostic. You
+can include code chunks in other languages (like Python, bash, Stan, and SQL) in
+your R Markdown documents.
+
+Python, in particular, has recently improved support in R Markdown and the RStudio IDE.
+Specifically, the [`reticulate`](todo) package makes it possible to specify the python
+version and conda / virtual environment, as well as persist objects across code chunks. 
+There is also native support for including python plots and other output in your
+rendered R Markdown document. There is much written already about this work flow. If
+interested, the following articles are helpful:
+
+- todo
+- todo
 
 ## CUSTOMIZED EMAILS
 
