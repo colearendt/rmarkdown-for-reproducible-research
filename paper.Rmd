@@ -69,7 +69,7 @@ even computer terminals (todo image).
 If Markdown is a lightweight markup language and text formatting syntax, R
 Markdown must be Markdown plus R code, right? Yes, with a catch. R Markdown
 actually supports _many_ programming languages and output types. It got its
-start with R, and R is the primary language engine, but R is an interface
+start with R, and R is the primary language engine. However, R is an interface
 language. This means that R has been (from its outset) commonly used to "wrap"
 or call other programming languages. This began as Fortran and C, but has
 expanded to include C++, Python, JavaScript, SQL, Stan, and more. As a result, R
@@ -150,9 +150,9 @@ means that they cache and display output as it is generated, making it easier to
 interactively and iteratively build a narrative without having to re-render the
 document each time you have made a change.
 
-It is worth noting that this output can be **problematic for reproducibility**,
-though, since you may have unknowingly persisted an output (state) that is no
-longer relevant or reproducible.
+It is worth noting that this output can be **problematic for reproducibility.**
+Because output is cached, there is _state_ introduced that might unknowingly
+persist when it is no longer relevant or reproducible.
 
 As a result, R Notebooks can be thought about as good for interactive
 exploration or discussion among developers, but moving to a standard R Markdown
@@ -233,6 +233,7 @@ or other output which she will use to share the output with colleagues or
 other researchers.
 
 This process is tedious and error prone: 
+
  - moving the results to another medium (e.g. from script output to a PowerPoint)
  - copying values, data, plots, images, etc.
  - injecting values into prose (e.g. There are 45 rows in this dataset)
@@ -260,7 +261,7 @@ data, since no human "copy/paste" or other editorial process has taken place.
 
 This problem and solution can be reduced to a paradigm of _best practices_ in
 which reproducible, data-driven research is greatly simplified by R Markdown.
-There are many [much more thorough](https://rpubs.com/marschmi/105639) articles
+There are certainly [more thorough](https://rpubs.com/marschmi/105639) articles
 on the topic, but we will focus on the highlights.
 
 - Define input datasets, resources, or other dependencies
@@ -387,7 +388,7 @@ communication. If you are interested in examples, we
 
 We like to think that the sky is the limit when it comes to the reproducible
 results that can be achieved using R Markdown, and are always excited to see
-the very cool things that the open source community builds using this tool.
+the impressive works that the open source community builds using this tool.
 
 # OTHER TOOLS
 
@@ -437,8 +438,8 @@ in source documents (mostly code) over time.
 Since our research in this workflow is entirely driven by data along the highway
 of code, it makes sense to spend some time getting used to these tools. If we
 make version control a part of our process, we get reproducible research up to a
-moment in time and easy auditability of code differences since R Markdown
-consists of plaintext documents that are easily compared over time.
+moment in time. Further, since R Markdown consists of plaintext documents, we
+acquire easy auditability of code that can be compared over time.
 
 There are several helpful tutorials and books on the topic, principally [Happy
 Git with R](todo), and even a built-in `git` pane within the RStudio IDE to simplify
