@@ -2,7 +2,7 @@
 title: "R Markdown for Reproducible Research"
 author: "Cole Arendt"
 date: "`r Sys.Date()`"
-output: pdf_document
+output: bookdown::pdf_document2
 ---
 
 ```{r setup, include=FALSE}
@@ -135,12 +135,12 @@ context to render the document and thereby helps ensure reproducibility.
 
 ## WHAT IS AN R NOTEBOOK?
 
-When creating a new document in the RStudio IDE (todo link to figure), you might notice an option
+When creating a new document in the RStudio IDE (see Figure \@ref(file-dropdown)), you might notice an option
 to create a "R Notebook" or "R Markdown Notebook." This is offered in addition
 to the long-known "R Markdown," and the differences are subtle.
 
 ![RStudio IDE New File Dropdown showing R Markdown and R Notebook
-options](./img/new-file-dropdown.png)
+options](./img/new-file-dropdown.png){#file-dropdown}
 
 There can be [many
 reasons](https://rviews.rstudio.com/2017/03/15/why-i-love-r-notebooks/) that a
