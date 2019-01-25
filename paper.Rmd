@@ -40,7 +40,9 @@ reproducible results is a valuable tool in a researcher's toolkit.
 
 ## WHAT IS MARKDOWN?
 
-The story of R Markdown begins with Markdown, a markup language and formatting
+The story of R Markdown begins with
+[Markdown](https://en.wikipedia.org/wiki/Markdown), a markup language and
+formatting
 syntax designed to be:
 
  - human readable
@@ -490,11 +492,17 @@ defined in an R Markdown template that any researcher or contributor can easily
 use or extend as needed. It is the power of an open source community building
 quality and reproducible tools that make such a future possible.
 
-### Resources
+# RESOURCES
+
+The source and examples from this paper are available on GitHub:
+
+https://github.com/colearendt/rmarkdown-for-reproducible-research
+
+There are also many other interesting resources on this topic
+which we did not have the opportunity to include:
 
 - http://ropensci.github.io/reproducibility-guide/sections/tools/
 - http://shop.oreilly.com/product/0636920051435.do
 - https://rviews.rstudio.com/2018/11/01/r-markdown-a-better-approach/
 - https://rviews.rstudio.com/2017/01/25/r-markdown-for-the-enterprise/
-- https://en.wikipedia.org/wiki/Markdown
-- https://www.oreilly.com/library/view/the-art-of/9781593273842/ch15.html
+
