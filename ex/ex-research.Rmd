@@ -50,5 +50,11 @@ all_detail_tall <- all_detail %>%
 ```
 
 ```{r explore_output}
+by_med_sepal_length <- all_detail %>% arrange(desc(median_Sepal.Length)) %>% pull(Species)
+
 knitr::kable(all_detail_tall)
 ```
+
+Did you notice that `r by_med_sepal_length %>% .[[1]] %>% as.character()` has
+the highest median Sepal.Length? And `r by_med_sepal_length %>%
+.[[length(by_med_sepal_length)]] %>% as.character()` has the lowest.
