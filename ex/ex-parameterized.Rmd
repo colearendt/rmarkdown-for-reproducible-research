@@ -12,6 +12,12 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## R Markdown
 
-Start Date: `r params$start_date`
+### Start Date: `r params$start_date`
 
-End Date: `r params$end_date`
+### End Date: `r params$end_date`
+
+Below is a plot on data for the time period.
+
+```{r plot}
+plot(iris)
+```
