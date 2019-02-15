@@ -1,0 +1,11 @@
+---
+title: "I know your name"
+output: html_document
+params:
+  name: 
+    input: text
+    label: Type your name
+    value: NULL
+---
+
+# It is `r params$name`
