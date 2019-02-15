@@ -1,0 +1,25 @@
+---
+title: "other-languages"
+author: "Cole Arendt"
+date: "2/15/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(reticulate)
+reticulate::use_virtualenv("./r-reticulate", required = TRUE)
+```
+
+```{r}
+name <- "cole"
+```
+
+```{python}
+print("Hello " + r.name + "!")
+```
+
+```{bash info}
+hostname
+echo "hello friend"
+```
