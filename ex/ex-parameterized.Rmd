@@ -5,6 +5,7 @@ params:
   start_date: !r Sys.Date() - 10
   end_date: !r Sys.Date()
 ---
+`r params$start_date`
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
